@@ -1,17 +1,1 @@
-// Has to be in the head tag, otherwise a flicker effect will occur.
-let initTheme = (theme) => {
-  if (theme == null) {
-    const userPref = window.matchMedia;
-    if (userPref && userPref('(prefers-color-scheme: dark)').matches) {
-        theme = 'dark';
-    }
-  }
-
-  if (theme)  {
-    document.documentElement.setAttribute('data-theme', theme)
-  }
-
-  localStorage.setItem("theme", theme);
-}
-
-initTheme(localStorage.getItem("theme"));
+let initTheme=e=>{if(null==e){const t=window.matchMedia;t&&t("(prefers-color-scheme: dark)").matches&&(e="dark")}e&&document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e)};initTheme(localStorage.getItem("theme"));
